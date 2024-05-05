@@ -1,0 +1,49 @@
+nav{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1266px;
+}
+.leftNav{
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    .logo{
+        position: relative;
+        margin: auto 20px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      
+        span{
+            position: relative;
+            bottom: -15px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: larger;
+        }
+    }
+}
+.rightNav{
+    width: 50%;
+    height: 100%;
+    position: relative;
+    ul{
+        position: relative;
+        margin: auto 20px;
+        height: 100%;
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+    }
+    .loginBtn{
+        padding: 10px;
+        width: 80px;
+        border-radius: 40px;
+        border: none;
+        background-color: black;
+        color: white;
+    }
+}
