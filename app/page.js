@@ -32,15 +32,16 @@ export default function Home() {
 
         </div>
       </section>
+
       <section className="features">
         <div className="featuresContainer">
           <div className="featuresUpper">
             <h1 className="featuresH1">Your Fans can buy you a CHAI..</h1>
             <div className="animatedGifs">
 
-              <Icon src = "/man.gif" content = "Fans want to help" />
-              <Icon src = "/coin.gif" content = "Fans want to help" />
-              <Icon src = "/group.gif" content = "Fans want to help" />
+              <Icon src="/man.gif" content="Fans want to help" />
+              <Icon src="/coin.gif" content="Fans want to help" />
+              <Icon src="/group.gif" content="Fans want to help" />
 
             </div>
           </div>
@@ -60,7 +61,21 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="endPage">EndPage</section>
+
+      <section className="endPage">
+        <div className="endPageContainer">
+
+          <div className="left">
+            <img width={560} src="/vector.png" alt="" />
+          </div>
+          <div className="right">
+            <span>Start a membership for your biggest fans</span>
+            <p>It's free and takes less than a minute</p>
+            <button className="endPageBtn">Register now</button>
+          </div>
+
+        </div>
+      </section>
     </>
   );
 }

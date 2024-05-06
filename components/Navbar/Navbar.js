@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import "./navbar.scss"
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
 
       <div className='rightNav'>
         <ul>
-        <button className='loginBtn'>Login</button>
+        <Link href={"/Login"} ><button className='loginBtn'>Login</button></Link>
         </ul>
       </div>
 

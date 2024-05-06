@@ -1,0 +1,23 @@
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.copyright{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerLinks ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    gap: 22px;
+}
+.socials{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
