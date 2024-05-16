@@ -6,6 +6,11 @@ html {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     font-family: "Poppins";
     margin: 0;
@@ -14,7 +19,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:#302c26;
+    background-color: #171512;
     -webkit-user-select: none;
     /* Safari */
     -moz-user-select: none;
@@ -24,105 +29,126 @@ body {
     user-select: none;
     /* Standard */
 }
-.childrenDiv{
-}
+
 img {
-     /* user-drag: none; */
+    /* user-drag: none; */
     -webkit-user-drag: none;
     /* Safari */
 }
-button{
+
+button {
     cursor: pointer;
 }
+
 section {
     position: relative;
     height: 600px;
     width: 1266px;
+    overflow: hidden;
 }
-nav{
+
+nav {
     position: fixed;
-    background-color:#f0dbc0;
+    background-color: #f0dbc0;
     height: 80px;
     width: 100%;
     top: 0;
     z-index: 999;
 }
-footer{
+
+footer {
+    position: relative;
     height: 120px;
     width: 1266px;
     background-color: black;
-    color:white;
+    color: white;
 }
-.landing, .endPage{
+
+.landing,
+.endPage {
     background-color: #f0dbc0;
 }
-.features{
+
+.features {
     background-color: black;
     color: white;
 }
-.landingContainer{
+
+.landingContainer {
     position: relative;
     padding: 120px 65px;
     display: flex;
 }
 
-.leftLanding{
+.leftLanding {
     position: relative;
     width: 55%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.rightLanding{
+
+.rightLanding {
     position: relative;
     width: 45%;
 }
-.rating{
+
+.rating {
     display: flex;
     align-items: center;
     padding: none;
     gap: 8px;
 }
-.heroTitle{
+
+.heroTitle {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 55px;
 }
-.heroTitle span{
+
+.heroTitle span {
     font-size: 75px;
     line-height: 0.5;
     font-weight: bold;
 }
-p{
+
+p {
     position: relative;
 }
-.buttons{
+
+.buttons {
     display: flex;
     gap: 20px;
     height: 60px;
     align-items: center;
 }
-.blackBtn , .whiteBtn{
+
+.blackBtn,
+.whiteBtn {
     padding: 20px;
     width: 180px;
     border-radius: 40px;
     border: none;
-    font-size : medium;
+    font-size: medium;
 }
-.blackBtn{
+
+.blackBtn {
     background-color: black;
     color: white;
 }
-.whiteBtn{
+
+.whiteBtn {
     border: 1px solid black;
 }
-.whiteBtn:hover , .blackBtn:hover{
+
+.whiteBtn:hover,
+.blackBtn:hover {
     padding: 20.2px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.screen{
+.screen {
     position: absolute;
     background-color: black;
     height: 500px;
@@ -130,49 +156,54 @@ p{
     right: 17%;
     width: 270px;
     border-radius: 40px;
-    z-index: 2000;
+    z-index: 1000;
 }
 
-.featuresContainer{
+.featuresContainer {
     position: relative;
     display: flex;
     height: 100%;
     flex-direction: column;
 }
-.featuresUpper{
+
+.featuresUpper {
     height: 50%;
-    padding:110px 65px 0 65px;
+    padding: 110px 65px 0 65px;
     display: flex;
     flex-direction: column;
 
 }
-.featuresH1{
+
+.featuresH1 {
     font-size: 30px;
     text-align: center;
     line-height: 0;
     padding-bottom: 50px;
     font-weight: 400;
 }
-.animatedGifs{
+
+.animatedGifs {
     display: flex;
     background-color: black;
     justify-content: space-around;
     align-items: center;
     gap: 50px;
 }
-.icon{
+
+.icon {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-.icon p{
+
+.icon p {
     line-height: 0;
     font-size: small;
 }
 
-.image{
+.image {
     background-color: grey;
     display: flex;
     justify-content: center;
@@ -182,11 +213,12 @@ p{
     border-radius: 50%;
 }
 
-.line{
+.line {
     background-color: #f0dbc0;
     height: 1px;
 }
-.featuresLower{
+
+.featuresLower {
     padding: 0 65px;
     display: flex;
     flex-direction: column;
@@ -194,14 +226,16 @@ p{
     align-items: center;
     height: 45%;
 }
-.pointers{
+
+.pointers {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     padding-bottom: 35px;
 }
-.pointer{
+
+.pointer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,52 +243,95 @@ p{
     font-size: small;
     width: 40%;
 }
-.pointer span{
+
+.pointer span {
     position: relative;
     margin-top: 15px;
 }
 
-.endPageContainer{
+.endPageContainer {
     position: relative;
     display: flex;
     /* background-color: red; */
     padding: 40px 30px;
 }
-.endPageContainer .left{
+
+.endPageContainer .left {
+    position: relative;
     width: 45%;
     display: flex;
     justify-content: center;
-    align-items:flex-end;
+    align-items: flex-end;
 }
-.endPageContainer .left img{
+
+.endPageContainer .left img {
     transform: scaleX(-1);
 }
-.endPageContainer .right{
+
+.endPageContainer .right {
     width: 55%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.endPage span{
+
+.endPage span {
     font-size: 63px;
     font-weight: bold;
     text-align: center;
     line-height: 1.1;
 }
-.endPage p{
+
+.endPage p {
     font-size: large;
 }
-.endPageBtn{
+
+.endPageBtn {
     padding: 20px 120px;
     /* width: 350px; */
     border-radius: 40px;
     border: none;
-    font-size : large;
+    font-size: large;
     background-color: #000;
     color: white;
 }
-.endPageBtn:hover{
+
+.endPageBtn:hover {
     padding: 20.2px 122px;
 
+}
+
+.payBtn :disabled {
+    cursor: not-allowed;
+}
+
+/* animations */
+@keyframes breathe {
+    0%, 100% { height: 48px; } /* Start and end height */
+    50% { height: 25px; width: 48px; } /* Collapsed height */
+}
+
+.smileDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    position: absolute;
+    top: 178px;
+    right: 199px;
+    transform: rotate(12deg);
+}
+#smile{
+    animation: breathe 4s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite; /* Adjust timing and easing as needed */
+    width: 48px;
+    position: absolute;
+}
+
+#smoke{
+    width: 60px;
+    position: absolute;
+    top: 242px;
+    right: 120px;
 }

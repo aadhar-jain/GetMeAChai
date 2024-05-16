@@ -1,10 +1,12 @@
 import Pointer from "@/components/Pointer/Pointer";
 import Icon from "@/components/Icon/Icon";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
       <section className="landing">
+        
         <div className="landingContainer">
 
           <div className="leftLanding">
@@ -19,15 +21,15 @@ export default function Home() {
             <p>Get funded by your fans & followers. Empower to make difference
               together. Start Now. </p>
             <div className="buttons">
-              <button className="whiteBtn">Get started</button>
-              <button className="blackBtn" >Read more</button>
+              <Link href={"/Login"}><button className="whiteBtn">Get started</button></Link>
+              <Link href={"/about"}><button className="blackBtn" >Read more</button></Link>
             </div>
           </div>
 
           <div className="rightLanding">
             <div className="screen">
-              {/* design carousel */}
             </div>
+
           </div>
 
         </div>
@@ -67,11 +69,15 @@ export default function Home() {
 
           <div className="left">
             <img width={560} src="/vector.png" alt="" />
+            <div className="smileDiv">
+              <img id="smile" src="/smile.png" alt="" srcset="" />
+            </div>
+            <img id="smoke" src="/smoke.gif" alt="" srcset="" />
           </div>
           <div className="right">
             <span>Start a membership for your biggest fans</span>
             <p>It's free and takes less than a minute</p>
-            <button className="endPageBtn">Register now</button>
+            <Link href={"/Login"}><button className="endPageBtn">Register now</button></Link>
           </div>
 
         </div>

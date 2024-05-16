@@ -1,6 +1,7 @@
 import Footer from "@/components/Footer/Footer";
 import Navbar from "@/components/Navbar/Navbar";
 import "./globals.css";
+import SessionWrapper from "@/components/SessionWrapper";
 
 export const metadata = {
   title: "Get me a CHAI",
@@ -11,13 +12,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <SessionWrapper>
+          
+          <Navbar />
+          <div style={{}} className="childrenDiv">
+            {children}
+          </div>
+          <Footer />
 
-        <Navbar />
-        <div className="childrenDiv">
-          {children}
-        </div>
-        <Footer />
-
+        </SessionWrapper>
       </body>
     </html>
   );

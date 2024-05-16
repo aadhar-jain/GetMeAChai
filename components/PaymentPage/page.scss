@@ -1,0 +1,110 @@
+.profilePage {
+    padding-top: 80px;
+    width: 1266px;
+    height: 100%;
+    background-color: #000;
+    color: white;
+
+    .images {
+        width: 100%;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .coverImg {
+            width: 100%;
+            height: inherit;
+            object-fit: cover;
+        }
+
+        .profileImg {
+            position: relative;
+            border-radius: 50%;
+            width: 125px;
+            border-radius: 50%;
+            bottom: 15%;
+        }
+    }
+
+
+    .profileContent {
+        margin-top: 90px;
+        display: flex;
+        flex-direction: column;
+        
+        .userDetails {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .payment {
+            padding: 50px 100px;
+            display: flex;
+            gap: 45px;
+
+            .paymentLeft {
+                background-color: rgb(65, 63, 63);
+                border-radius: 10px;
+                width: 50%;
+                padding: 20px;
+
+                ul {
+                    list-style-type: none;
+                    gap: 2px;
+                    font-size: 12px;
+                    margin-left: 15px;
+                    padding: 0;
+
+                    li{
+                        padding: 5px;
+                        display: flex;
+                        align-items: center;
+                        img{
+                            width: 25px;
+                            border-radius: 50%;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .donation {
+                    font-weight: bold;
+                }
+            }
+
+            .paymentRight {
+                background-color: rgb(65, 63, 63);
+                border-radius: 10px;
+                width: 50%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+
+                input, button{
+                    padding: 10px;
+                    border-radius: 10px;
+                    border: none;
+                }
+                input{
+                    background-color: rgb(0, 0, 0);
+                    color: white;
+                }
+                gap: 10px;
+                .instantPay{
+                    position: relative;
+                    margin-top: 20px;
+                    display: flex;
+                    gap: 10px;
+                    
+                    button{
+                        padding: 8px;
+                        width: 80px;
+                    }
+                }
+            }
+        }
+    }
+}
