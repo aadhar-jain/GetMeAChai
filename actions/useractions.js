@@ -52,14 +52,58 @@ export const updateProfile = async (data, oldusername, oldemail) => {
     let newusername = ndata.username;
     ndata.username = oldusername;
 
-    await User.updateOne({ email: ndata.email}, ndata);        //ensure that email & username is never changed
+    await User.updateOne({ email: ndata.email }, ndata);        //ensure that email & username is never changed
 
     //check if user had tried to change its username
     if (oldusername != newusername || oldemail != ndata.email) {
         return { error: 1 };
     }
-    else{
-        return {error : 0};
+    else {
+        return { error: 0 };
     }
 
 }
+
+export const fetchSearchResults = async (searchString) => {
+    await connectDB()
+
+    const usersWithPayments = await User.aggregate([
+        {
+            $match: {
+                $or: [
+                    { username: { $regex: searchString, $options: "i" } },
+                    { name: { $regex: searchString, $options: "i" } },
+                ]
+            }
+        },
+        {
+            $lookup: {
+                from: "payments", // Name of the Payment collection
+                localField: "username", // Field in User collection
+                foreignField: "to_user", // Field in Payment collection
+                as: "paymentsReceived" // Alias for the joined documents
+            }
+        },
+        {
+            $match: {
+                "paymentsReceived.done": true // Filter payments where "done" is true
+            }
+        },
+        {
+            $addFields: {
+                totalPaymentsReceived: { $size: "$paymentsReceived" } // Count the number of payments received
+            }
+        },
+        {
+            $sort: { totalPaymentsReceived: -1 } // Sort users by the number of payments received in descending order
+        }
+    ]);
+
+    // Flatten the result and include all fields from User collection
+    const flattenedResult = usersWithPayments.map(user => ({
+        ...user, // Include all fields from the User collection
+        totalPaymentsReceived: user.totalPaymentsReceived // Include the computed field
+    }));
+
+    return flattenedResult;
+} 

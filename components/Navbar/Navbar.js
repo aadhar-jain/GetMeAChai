@@ -5,6 +5,7 @@ import "./navbar.scss"
 import { useState } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+
 const Navbar = () => {
   const { data: session } = useSession();
   const [showDropDown, setshowDropDown] = useState(false);
@@ -32,6 +33,7 @@ const Navbar = () => {
         </div>}
 
       </div>
+
     </nav>
   )
 }

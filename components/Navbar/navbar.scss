@@ -1,22 +1,24 @@
-nav{
-    display : flex;
+nav {
+    display: flex;
     justify-content: center;
     align-items: center;
     max-width: 1266px;
 }
-.leftNav{
+
+.leftNav {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 60%;
     height: 100%;
-    .logo{
+
+    .logo {
         position: relative;
         margin: auto 20px;
         display: flex;
         gap: 10px;
         align-items: center;
-      
-        span{
+
+        span {
             position: relative;
             bottom: -15px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -24,8 +26,9 @@ nav{
         }
     }
 }
-.rightNav{
-    width: 50%;
+
+.rightNav {
+    width: 40%;
     height: 100%;
     position: relative;
     display: flex;
@@ -33,14 +36,14 @@ nav{
     align-items: center;
     padding: 0 20px;
 
-    .dropdown{
+    .dropdown {
         display: flex;
         flex-direction: column;
         gap: 5px;
         justify-content: center;
         align-items: center;
 
-        .dropdownBtn{
+        .dropdownBtn {
             color: white;
             border: none;
             background-color: black;
@@ -49,7 +52,7 @@ nav{
             border-radius: 20px;
         }
 
-        ul{
+        ul {
             margin: 0;
             padding: 0;
             display: flex;
@@ -60,7 +63,7 @@ nav{
             margin-top: 160px;
             right: 25px;
 
-            li{
+            li {
                 list-style-type: none;
                 text-align: center;
                 padding: 7px;
@@ -72,8 +75,8 @@ nav{
             }
         }
     }
-    
-    .loginBtn{
+
+    .loginBtn {
         width: 90px;
         height: 40px;
         border: none;

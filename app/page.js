@@ -1,12 +1,31 @@
+"use client"
 import Pointer from "@/components/Pointer/Pointer";
 import Icon from "@/components/Icon/Icon";
 import Link from "next/link";
+import Slider from "@/components/Slider/Slider";
+import Search from "@/components/Search/Search";
+import { useState } from "react";
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+  const handleClick = () => {
+    console.log("clicked" , isVisible)
+    setIsVisible(!isVisible);
+  };
+
+
   return (
     <>
+
+      <div className="searchBarDiv">
+        <img src="/searchIcon.gif" alt="" />
+        <div onClick={handleClick} >Search creators</div>
+      </div>
+
+      {isVisible && <Search setIsVisible = {setIsVisible}/>}
+
       <section className="landing">
-        
+
         <div className="landingContainer">
 
           <div className="leftLanding">
@@ -23,11 +42,14 @@ export default function Home() {
             <div className="buttons">
               <Link href={"/Login"}><button className="whiteBtn">Get started</button></Link>
               <Link href={"/about"}><button className="blackBtn" >Read more</button></Link>
+
             </div>
           </div>
 
           <div className="rightLanding">
             <div className="screen">
+              <div className="dot"></div>
+              <Slider />
             </div>
 
           </div>
@@ -70,9 +92,9 @@ export default function Home() {
           <div className="left">
             <img width={560} src="/vector.png" alt="" />
             <div className="smileDiv">
-              <img id="smile" src="/smile.png" alt="" srcset="" />
+              <img id="smile" src="/smile.png" alt="" />
             </div>
-            <img id="smoke" src="/smoke.gif" alt="" srcset="" />
+            <img id="smoke" src="/smoke.gif" alt="" />
           </div>
           <div className="right">
             <span>Start a membership for your biggest fans</span>

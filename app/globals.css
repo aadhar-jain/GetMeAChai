@@ -53,7 +53,7 @@ nav {
     height: 80px;
     width: 100%;
     top: 0;
-    z-index: 999;
+    z-index: 1000;
 }
 
 footer {
@@ -157,8 +157,19 @@ p {
     width: 270px;
     border-radius: 40px;
     z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.697); /* Shadow effect */
 }
-
+.dot{
+    height: 18px;
+    width: 18px;
+    background-color: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    z-index: 4000;
+}
 .featuresContainer {
     position: relative;
     display: flex;
@@ -216,6 +227,7 @@ p {
 .line {
     background-color: #f0dbc0;
     height: 1px;
+    margin-top: 70px;
 }
 
 .featuresLower {
@@ -304,6 +316,43 @@ p {
 
 .payBtn :disabled {
     cursor: not-allowed;
+}
+
+.SearchContainer{
+    width: 1266px;
+    background-color: #f0dbc0;
+}
+
+.searchBarDiv {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    z-index: 4000;
+    top: 3%;
+    width: 1266px;
+    height: 0;
+    justify-content: center;
+}
+.searchBarDiv div {
+    border: none;
+    padding: 12px 55px;
+    width: 270px;
+    margin-right: 5px;
+    border-radius: 20px;
+    position: relative;
+    background-color: white;
+    font-size: small;
+    top: 25px;
+}
+.searchBarDiv div:hover{
+    cursor: text;
+}
+.searchBarDiv img{
+    position: relative;
+    width: 30px;
+    left: 40px;
+    z-index: 1000;
+    top: 25px;
 }
 
 /* animations */
