@@ -3,6 +3,8 @@ nav {
     justify-content: center;
     align-items: center;
     max-width: 1266px;
+    height: 98px;
+    background-color: transparent;
 }
 
 .leftNav {
@@ -10,19 +12,35 @@ nav {
     align-items: center;
     width: 60%;
     height: 100%;
+    position: relative;
+    overflow-x: hidden;
 
     .logo {
-        position: relative;
+        position: absolute;
         margin: auto 20px;
         display: flex;
-        gap: 10px;
+        gap: 12px;
         align-items: center;
-
-        span {
+        background-color: black;
+        color:  white;
+        height: 80px;
+        left: -54px;
+        top: 10px;
+        width: 330px;
+        border-radius: 65px;
+        
+        img{
+            width: 43px;
             position: relative;
-            bottom: -15px;
+            left: 60px;
+            top: -5px;
+        }
+        span {
+            left: 60px;
+            position: relative;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-size: larger;
+            font-size: 22px;
+            top: 6px;
         }
     }
 }
@@ -81,7 +99,9 @@ nav {
         height: 40px;
         border: none;
         border-radius: 20px;
-        padding: 2px;
+        padding: 2px; 
+        position: relative;
+        top: -11px;
         background-color: black;
         color: white;
     }

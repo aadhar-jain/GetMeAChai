@@ -1,10 +1,11 @@
 "use client"
+import React from "react";
 import Pointer from "@/components/Pointer/Pointer";
 import Icon from "@/components/Icon/Icon";
 import Link from "next/link";
 import Slider from "@/components/Slider/Slider";
 import Search from "@/components/Search/Search";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);

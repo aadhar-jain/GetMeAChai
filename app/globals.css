@@ -42,7 +42,8 @@ button {
 
 section {
     position: relative;
-    height: 600px;
+    height: 100vh;
+    max-height: 670px;
     width: 1266px;
     overflow: hidden;
 }
@@ -54,6 +55,7 @@ nav {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.2s ease-out; /* Smooth transition effect */
 }
 
 footer {

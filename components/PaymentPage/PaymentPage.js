@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import { useSearchParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
-import { useForm } from "react-hook-form";
 
 const PaymentPage = ({ username }) => {
     const [paymentform, setpaymentform] = useState({ name: "", message: "", amount: "" })

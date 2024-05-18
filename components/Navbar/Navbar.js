@@ -2,9 +2,8 @@
 import React from 'react'
 import Link from 'next/link'
 import "./navbar.scss"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
-
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -12,9 +11,10 @@ const Navbar = () => {
 
   return (
     <nav>
+
       <div className='leftNav'>
         <Link href={'/'}><div className="logo">
-          <img width={'50px'} src="logo.gif" alt=""/>
+          <img src="logo.gif" alt="" />
           <span>Get Me a CHAI...</span>
         </div></Link>
 
