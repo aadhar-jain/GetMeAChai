@@ -58,6 +58,21 @@ const PaymentPage = ({ username }) => {
     const pay = async (amount) => {
         //get orderId
         let a = await initiate(amount, username, paymentform);
+        if(a.error){
+            toast(`Cannot complete transaction! Try later`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Bounce,
+            });
+            return;
+        }
+
         let orderId = a.id;
 
         var options = {
@@ -86,14 +101,6 @@ const PaymentPage = ({ username }) => {
         var rzp1 = new Razorpay(options);
         rzp1.open();
     }
-
-    //form validation using react-hook-form
-    const {
-        register,
-        handleSubmit,
-        watch,
-        formState: { errors },
-    } = useForm();
 
     return (
         <>

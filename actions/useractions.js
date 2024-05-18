@@ -15,6 +15,9 @@ export const initiate = async (amount, to_username, paymentform) => {
     const key_id = user.razorpayId;
 
     //creating a instance i.e a new razorpay order
+    if (key_id === undefined || key_secret === undefined) {
+        return { error: 1 };
+    }
     var instance = new Razorpay({ key_id: key_id, key_secret: key_secret });
 
     let options = {
@@ -52,7 +55,7 @@ export const updateProfile = async (data, oldusername, oldemail) => {
     let newusername = ndata.username;
     ndata.username = oldusername;
 
-    await User.updateOne({ email: ndata.email }, ndata);        //ensure that email & username is never changed
+    await User.updateOne({ username: oldusername }, ndata);        //ensure that email & username is never changed
 
     //check if user had tried to change its username
     if (oldusername != newusername || oldemail != ndata.email) {
@@ -65,8 +68,12 @@ export const updateProfile = async (data, oldusername, oldemail) => {
 }
 
 export const fetchSearchResults = async (searchString) => {
-    await connectDB()
-
+    await connectDB();
+    
+    if(searchString == ""){
+        return await User.find({}).lean();
+    }
+    
     const usersWithPayments = await User.aggregate([
         {
             $match: {
@@ -85,13 +92,23 @@ export const fetchSearchResults = async (searchString) => {
             }
         },
         {
-            $match: {
-                "paymentsReceived.done": true // Filter payments where "done" is true
-            }
-        },
-        {
             $addFields: {
-                totalPaymentsReceived: { $size: "$paymentsReceived" } // Count the number of payments received
+                filteredPayments: {
+                    $filter: {
+                        input: "$paymentsReceived",
+                        as: "payment",
+                        cond: { $eq: ["$$payment.done", true] } // Filter payments where "done" is true
+                    }
+                },
+                totalPaymentsReceived: {
+                    $size: {
+                        $filter: {
+                            input: "$paymentsReceived",
+                            as: "payment",
+                            cond: { $eq: ["$$payment.done", true] }
+                        }
+                    }
+                }
             }
         },
         {
@@ -106,4 +123,4 @@ export const fetchSearchResults = async (searchString) => {
     }));
 
     return flattenedResult;
-} 
+};

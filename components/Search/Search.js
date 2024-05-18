@@ -5,47 +5,69 @@ import Link from 'next/link';
 import { fetchSearchResults } from '@/actions/useractions';
 import { useEffect, useState, useRef } from 'react';
 
-const Search = ({ setIsVisible }) => {
+const Search = ({ isVisible, setIsVisible }) => {
     const [Users, setUsers] = useState([])
     const [searchString, setsearchString] = useState("")
-    const toggleDivRef = useRef(null);
+    const divRef = useRef(null);
+    const inputRef = useRef(null);
 
     useEffect(() => {
-        toggleDivRef.current.focus();
+        divRef.current.focus();
+        getUsers(searchString);
     }, [])
+
+    useEffect(() => {
+        if (isVisible) {
+            document.documentElement.style.overflowY = 'hidden';
+        } else {
+            document.documentElement.style.overflowY = 'auto';
+        }
+
+        // Cleanup function to reset overflowY style when component unmounts
+        return () => {
+            document.documentElement.style.overflowY = 'auto';
+        };
+
+    }, [isVisible]);
+
 
     const handleChange = (e) => {
         setsearchString(e.target.value);
-    }
-
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
+        setTimeout(() => {
             getUsers(searchString);
-        }
-    };
+        }, 500);
+    }
 
 
     const getUsers = async () => {
-        if (searchString != "") {
-            let data = await fetchSearchResults(searchString);
-            setUsers(data);
-        }
+        let data = await fetchSearchResults(searchString);
+        setUsers(data);
         return;
+    }
+
+    const handleBlur = () => {
+        setTimeout(() => {
+            if (document.activeElement !== inputRef.current && document.activeElement !== divRef.current) {
+                setIsVisible(false);
+            }
+        }, 100);
+    }
+    const handleFocus = () => {
+        setIsVisible(true);
     }
 
     return (
         <div className="searchContainer">
 
-            <div className='searchItems'>
+            <div ref={divRef} className='searchItems' tabIndex={0} onFocus={handleFocus} onBlur={handleBlur}>
 
-                <input ref={toggleDivRef}  onBlur={() => { setTimeout(() => { setIsVisible(false); }, 100) }} onKeyDown={handleKeyDown} onChange={handleChange} value={searchString} placeholder='Search creators' type="text" />
+                <input spellCheck="false" ref={inputRef} onChange={handleChange} value={searchString} placeholder='Search creators' type="text" />
 
                 <img id='searchIcon' src="/searchIcon.png" alt="" />
                 <img onClick={() => { setTimeout(() => { setIsVisible(false); }, 100) }} id='closeIcon' src="/closeIcon.png" alt="" />
 
                 <div className="searchResults">
-
-                    {Users.map((u, i) => {
+                    {Users.length != 0 && Users.map((u, i) => {
                         return <div className="searchItem" key={i}>
                             <img src={`${u.profilepic}`} alt="" />
                             <span className='itemName'>{u.name}</span>
