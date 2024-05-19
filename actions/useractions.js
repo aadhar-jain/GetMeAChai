@@ -15,7 +15,7 @@ export const initiate = async (amount, to_username, paymentform) => {
     const key_id = user.razorpayId;
 
     //creating a instance i.e a new razorpay order
-    if (key_id === undefined || key_secret === undefined) {
+    if (key_id === undefined || key_id == "" || key_secret === undefined || key_secret == "") {
         return { error: 1 };
     }
     var instance = new Razorpay({ key_id: key_id, key_secret: key_secret });

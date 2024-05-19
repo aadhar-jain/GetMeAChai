@@ -70,7 +70,7 @@ const Search = ({ isVisible, setIsVisible }) => {
                     {Users.length != 0 && Users.map((u, i) => {
                         return <div className="searchItem" key={i}>
                             <img src={`${u.profilepic}`} alt="" />
-                            <span className='itemName'>{u.name}</span>
+                            <span className='itemName'>{u.username}</span>
                             <Link href={`/${u.username}`}><span className="itemUsername">Visit page</span></Link>
                         </div>
                     })}
