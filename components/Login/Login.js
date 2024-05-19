@@ -19,22 +19,22 @@ const Login = () => {
   return (
     <div className='social_auth_container'>
       <button onClick={() => { signIn("google") }}>
-        <img width={32} src="/google.png" alt="" />
+        <img width={32} src="/google.webp" alt="" />
         <span>Continue with Google</span>
       </button>
 
       <button onClick={() => { signIn("github") }}>
-        <img width={35} style={{ filter: 'invert(100)', marginLeft: -2 }} src="/github.png" alt="" />
+        <img width={35} style={{ filter: 'invert(100)', marginLeft: -2 }} src="/github.webp" alt="" />
         <span>Continue with Github</span>
       </button>
 
       <button onClick={() => { signIn("google") }}>
-        <img width={30} src="/mail.png" alt="" />
+        <img width={30} src="/mail.webp" alt="" />
         <span>Continue with Email</span>
       </button>
 
       <button onClick={() => { signIn("facebook") }}>
-        <img width={33} style={{ marginLeft: -4 }} src="/facebook.png" alt="" />
+        <img width={33} style={{ marginLeft: -4 }} src="/facebook.webp" alt="" />
         <span>Continue with Facebook</span>
       </button>
     </div>

@@ -63,8 +63,8 @@ const Search = ({ isVisible, setIsVisible }) => {
 
                 <input spellCheck="false" ref={inputRef} onChange={handleChange} value={searchString} placeholder='Search creators' type="text" />
 
-                <img id='searchIcon' src="/searchIcon.png" alt="" />
-                <img onClick={() => { setTimeout(() => { setIsVisible(false); }, 100) }} id='closeIcon' src="/closeIcon.png" alt="" />
+                <img id='searchIcon' src="/searchIcon.webp" alt="" />
+                <img onClick={() => { setTimeout(() => { setIsVisible(false); }, 100) }} id='closeIcon' src="/closeIcon.webp" alt="" />
 
                 <div className="searchResults">
                     {Users.length != 0 && Users.map((u, i) => {

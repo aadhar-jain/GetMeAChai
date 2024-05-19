@@ -30,7 +30,7 @@ export default function Home() {
 
           <div className="leftLanding">
             <div className="rating">
-              <img width={"80px"} src="./star.png" alt="" />
+              <img width={"80px"} src="./star.webp" alt="" />
               <span>Trusted by creators from all over the globe.</span>
             </div>
             <div className="heroTitle">
@@ -90,9 +90,9 @@ export default function Home() {
         <div className="endPageContainer">
 
           <div className="left">
-            <img width={560} src="/vector.png" alt="" />
+            <img width={560} src="/vector.webp" alt="" />
             <div className="smileDiv">
-              <img id="smile" src="/smile.png" alt="" />
+              <img id="smile" src="/smile.webp" alt="" />
             </div>
             <img id="smoke" src="/smoke.gif" alt="" />
           </div>

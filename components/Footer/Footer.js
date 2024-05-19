@@ -20,8 +20,8 @@ const Footer = () => {
         </ul>
       </div>
       <div className='socials'>
-        <a href="https://www.linkedin.com/in/aadhar-j/"><img width={37} src="/linkedin.png" alt="LinkedIn" /></a>
-        <a href="https://github.com/aadhar-jain"><img height={35} width={35} src="/github.png" alt="Github" /></a>
+        <a href="https://www.linkedin.com/in/aadhar-j/"><img width={37} src="/linkedin.webp" alt="LinkedIn" /></a>
+        <a href="https://github.com/aadhar-jain"><img height={35} width={35} src="/github.webp" alt="Github" /></a>
       </div>
     </footer>
   )
