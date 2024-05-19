@@ -95,6 +95,7 @@ const Slider = () => {
 
     return (
         <div className="container" ref={slideContainerRef}>
+
             <div className="slides" ref={slideRef}>
                 <div className="slide">
                     <img src="/slide-1.png" alt="" />

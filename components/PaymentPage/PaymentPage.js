@@ -140,7 +140,7 @@ const PaymentPage = ({ username }) => {
                                 {Payments.map((p, i) => {
                                     return <li key={i}>
                                         <img src="/profileIcon.gif" alt="" />
-                                        <span>{p.name} donated</span><span className='donation'>&nbsp;₹{p.amount}&nbsp;</span> <span>with a message "{p.message}"</span>
+                                        <span>{p.name} donated</span><span className='donation'>&nbsp;₹{p.amount}&nbsp;</span> <span>with a message &quot;{p.message}&quot;</span>
                                     </li>
                                 })}
 

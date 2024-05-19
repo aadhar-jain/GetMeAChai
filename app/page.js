@@ -73,7 +73,7 @@ export default function Home() {
           <div className="featuresLower">
 
             <div className="pointers">
-              <Pointer content="We don't call them &quot;customers&quot; or transactions. They are your supporters." />
+              <Pointer content="We don&apos;t call them &quot;customers&quot; or transactions. They are your supporters." />
               <Pointer content="You get paid instantly to your bank account. No more 30-day delays." />
             </div>
 
@@ -98,7 +98,7 @@ export default function Home() {
           </div>
           <div className="right">
             <span>Start a membership for your biggest fans</span>
-            <p>It's free and takes less than a minute</p>
+            <p>It&apos;s free and takes less than a minute</p>
             <Link href={"/Login"}><button className="endPageBtn">Register now</button></Link>
           </div>
 

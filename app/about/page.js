@@ -45,7 +45,7 @@ const About = () => {
           <div>
             <h2>Contact Us</h2>
             <p>
-              Have questions or need support? Reach out to us at <a style={{ textDecoration: "underline" }} href="mailto:support@getmeachai.com">support@getmeachai.com</a>. We're here to help!
+              Have questions or need support? Reach out to us at <a style={{ textDecoration: "underline" }} href="mailto:support@getmeachai.com">support@getmeachai.com</a>. We&apos;sre here to help!
             </p>
           </div>
         </div>
